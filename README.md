@@ -23,4 +23,5 @@ Here are the gems used
 #### Please feel free to fork and clone the repo and use the techniques in your own apps. Also check out the excellent [Stripe documentation](https://stripe.com/docs).
 
 ##Screenshot
-[PuppyAdopt sample screenshot]: (url="https://github.com/tgoldenberg/stripe-test/app/assets/images/screen1.png")
+[PuppyAdopt sample screenshot][logo]
+[logo]: "https://github.com/tgoldenberg/stripe-test/app/assets/images/screen1.png"
