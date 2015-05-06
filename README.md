@@ -1,5 +1,5 @@
-# stripe-test
-### This is a test for using the Stripe API
+# PuppyAdopt - Example App with __StripeAPI__
+### This is a test for using the __Stripe API__
 ***
 Here are the gems used
  + `devise`
