@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @puppy.name
+%p
+  %b Age:
+  = @puppy.age
+%p
+  %b Price:
+  = @puppy.price
+%p
+  %b Breed:
+  = @puppy.breed
+
+= link_to 'Edit', edit_puppy_path(@puppy)
+\|
+= link_to 'Back', puppies_path

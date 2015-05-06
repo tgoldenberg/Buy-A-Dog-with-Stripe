@@ -1,0 +1,22 @@
+= form_for @puppy do |f|
+  - if @puppy.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@puppy.errors.count, "error")} prohibited this puppy from being saved:"
+      %ul
+        - @puppy.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :age
+    = f.number_field :age
+  .field
+    = f.label :price
+    = f.number_field :price
+  .field
+    = f.label :breed
+    = f.text_field :breed
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,24 @@
+%h1 Puppies
+- @puppies.each do |puppy|
+  - unless puppy.user_id == current_user.id
+    .comment
+      .comment-image
+        %img{src: "#{puppy.url}"}
+      .comment-content
+        .puppy-info
+          %h1
+            = puppy.name
+          %p #{puppy.breed}, #{puppy.age} years old
+          %p.comment-detail #{number_to_currency(puppy.price)}
+          %p Owner: #{puppy.user.email}
+        .puppy-button
+          = form_for @charge do |f|
+            = f.hidden_field :amount, value: puppy.price
+            = f.hidden_field :item, value: puppy.name
+            = f.hidden_field :owner_id, value: puppy.user.id
+
+
+            %script{src:"https://checkout.stripe.com/checkout.js", class:"stripe-button", data: {key: ENV["stripe_publishable_key"], amount:"#{puppy.price*100}", name:"PuppyAdopt", description: "#{number_to_currency(puppy.price)}", image: "/assets/lab.jpg"}}
+
+%li
+  = link_to 'Connect with Stripe', user_omniauth_authorize_path(:stripe_connect), class: 'stripe-connect'

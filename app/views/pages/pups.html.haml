@@ -1,0 +1,16 @@
+- @puppies.each do |puppy|
+  .comment
+    .comment-image
+      %img{src: "#{puppy.url}"}
+    .comment-content
+      .puppy-info
+        %h1
+          = puppy.name
+        %p #{puppy.breed}, #{puppy.age} years old
+        %p Owner: #{puppy.user.email}
+        %p Arrived yet: #{puppy.arrived}
+      .puppy-button.arrival
+        - my_charge = Charge.find_by(item: puppy.name, user_id: current_user.id, completed: false)
+        - if my_charge
+          %button
+            = link_to 'My pup arrived!', complete_charge_path(charge_id: my_charge.id, token: my_charge.token, price: my_charge.price, customer_id: my_charge.customer_id, destination: my_charge.vendor.uid)
