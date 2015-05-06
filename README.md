@@ -24,4 +24,4 @@ Here are the gems used
 
 ##Screenshot
 [PuppyAdopt sample screenshot][logo]
-[logo]: "https://github.com/tgoldenberg/stripe-test/app/assets/images/screen1.png"
+[logo]: "https://github.com/tgoldenberg/stripe-test/blob/master/app/assets/images/screen1.png?raw=true"
